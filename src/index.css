@@ -1,0 +1,91 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 196 84% 49%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 262 83% 50%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 196 84% 49%;
+    
+    --radius: 0.5rem;
+
+    --sidebar-background: 223 22% 10%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 196 84% 49%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 223 22% 15%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 223 22% 15%;
+    --sidebar-ring: 196 84% 49%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-theme-dark text-foreground;
+    background-image: radial-gradient(circle at center, theme(colors.theme-dark), theme(colors.theme-darker));
+  }
+  
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-theme-darker;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-theme-blue/50 rounded-full hover:bg-theme-blue/70 transition-colors;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-background/50 backdrop-blur-sm border border-white/10 rounded-lg shadow-lg;
+  }
+  
+  .glass-button {
+    @apply bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 
+           rounded-md px-4 py-2 text-sm font-medium text-white shadow-md
+           transition-all hover:shadow-lg hover:border-white/30;
+  }
+  
+  .alert-pulse {
+    @apply animate-pulse-slow;
+  }
+  
+  .glow-effect {
+    @apply animate-glow;
+  }
+}
